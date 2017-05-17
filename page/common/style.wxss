@@ -1,0 +1,94 @@
+.kind-list-text-title {
+  font-size: inherit;
+}
+
+.kind-list-text-subtitle {
+  font-size: small;
+  color: #666666;
+
+}
+
+.kind-list-text-subtitle-action {
+  font-size: small;
+  color: #666666;
+}
+.kind-list-label {
+  margin-left: 50rpx;
+}
+
+.action-list-item {
+  flex : 1;
+}
+
+.kind-list-label-action {
+  margin-left: 30rpx;
+}
+
+.action-list-item-text {
+  font-size: small;
+}
+
+.top-search {
+  background-color: #dbdbdb;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.top-search-input{
+  margin-left: 30rpx;
+  font-size: small;
+  border: thin solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  width: 75%;
+}
+
+.top-search-button{
+  font-size: small;
+  color: #FFFFFF;
+  background-color: #dbdbdb;
+  border: 1px solid #dbdbdb;
+  
+}
+
+.tips {
+  background-color: white;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.tips label{
+  padding-left: 20rpx;
+  padding-top: 20rpx;
+  font-size: small;
+}
+
+.ans-item{
+  background-color: #FFFFFF;
+  display: flex;
+  flex: 1;
+  height: 100rpx;
+  align-items: center;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.ans-item-text {
+  width: 80%;
+  padding-left: 30rpx;
+}
+
+.ans-item-text-title{
+  font-size: medium;
+}
+
+.ans-item-text-subtitile{
+  font-size: small;
+  color: #dbdbdb;
+}
+
+.ans-item-select {
+  padding-left: 5rpx;
+}
+
+

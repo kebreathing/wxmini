@@ -1,0 +1,50 @@
+<view class="index">
+    <!-- Head -->
+  <view class="index-hd">
+    <image class="index-logo" src="{{user.hdimg}}"></image>
+    <view class="index-desc">
+      <view><label>{{user.name}}</label></view>
+      <view>
+        <navigator url="pages/gym/gym">
+          <label wx:if="{{gym.binded}}">已绑定：{{gym.name}}</label>
+          <label wx:else>点击进行健身房绑定</label>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- END: Head -->
+
+  <!-- Body -->
+  <view class="index-bd">
+    <!-- 外层List-->
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">
+              <label class="kind-list-text-title">{{item.name}}</label>
+              <label class="kind-list-text-subtitle">({{item.scount}}套)</label>
+              <label class="kind-list-text-subtitle kind-list-label">{{item.rcount}} 名用户使用</label>
+            </view>
+            <image class="kind-list-img" src="resources/kind/{{item.id}}.png"></image>
+          </view>
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+
+              <!-- 转跳 -->
+              <block wx:for-items="{{item.schedules}}" wx:for-item="schedule" wx:key="*item">
+                <navigator url="pages/schedule/schedule?title={{schedule}}" class="navigator">
+                  <view class="navigator-text">{{schedule}}</view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+              </block>
+              <!-- End 转跳 -->
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- END list -->
+  </view>
+  <!-- END Body -->
+</view>

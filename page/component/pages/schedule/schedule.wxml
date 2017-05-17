@@ -1,0 +1,48 @@
+<!--page/component/pages/schedule/schedule.wxml-->
+<view class="index">
+    <!-- Head -->
+  <view class="index-hd">
+    <image class="index-logo" src="{{schedule.hdimg}}"></image>
+    <view class="index-desc">
+      <view><label>{{schedule.title}}</label></view>
+      <view>
+          <label>{{schedule.tips}}</label>
+      </view>
+    </view>
+  </view>
+  <!-- END: Head -->
+
+  <!-- Body -->
+  <view class="index-bd">
+    <!-- 外层List-->
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">
+              <label>{{item.id}}. {{item.name}}</label>
+              <label class="kind-list-text-subtitle kind-list-label-action">{{item.type}}</label>
+              <label class="kind-list-text-subtitle kind-list-label-action">建议：{{item.group}}组 * {{item.times}}次</label>
+              </view>
+          </view>
+
+          <!-- 折叠 -->
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <!-- 转跳 -->
+                <navigator class="navigator">
+                  <view class="action-list-item">
+                    <image src="{{item.action.gif}}"></image>
+                    <label class="action-list-item-text">{{item.action.tips}}</label>
+                  </view>
+                </navigator>
+              <!-- End 转跳 -->
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- END list -->
+  </view>
+  <!-- END Body -->
+</view>

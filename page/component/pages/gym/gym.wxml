@@ -1,0 +1,29 @@
+<!--gym.wxml-->
+<view class="index">
+  <view class="top-search">
+    <view class="top-search-input">
+      <input id="searchInput" type="text" confirm-type="search" placeholder="输入健身房名称" placeholder-style="color:#cccccc"  value="{{searchText}}" bindblur="onTextChangeEvent" auto-focus/>
+    </view>
+    <button class="top-search-button" size="mini" bindtap="onClickSearchBtn">搜索</button>
+  </view>
+  <!-- 搜索框 -->
+  <view class="tips">
+    <label>当前状态:</label>
+    <label wx:if="{{binded}}">{{gym}}</label>
+    <label wx:else>未绑定健身房</label>
+  </view>
+
+  <view class="ans-list-bd">
+  <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+    <view class="ans-item" id="{{item.id}}" bindtap="onSelectListItem">
+      <view class="ans-item-text">
+        <view class="ans-item-text-title"><label>{{item.name}}</label></view>
+        <view class="ans-item-text-subtitile"><label>{{item.address}}</label></view>
+      </view><!-- END 健身房文字 -->
+      <view class="ans-item-select" wx:if="{{item.selected}}">
+        <label id="selectedItem">绑定</label>
+      </view><!-- END 已选 -->
+    </view><!-- END Item -->
+  </block>
+  </view>
+</view>
